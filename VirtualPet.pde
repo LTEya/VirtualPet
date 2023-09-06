@@ -67,5 +67,12 @@ void draw() {
     fill(0);
     stroke(2,2,2,1); 
     arc(250,300,25,25,0,PI);
+//Light Sensor
+  if (rButton < 30){
+      fill(255,195,203);
+      strokeWeight(10);
+      ellipse(200,300,25,10);
+      ellipse(500-200,300,25,10);
+    }
 }
 
