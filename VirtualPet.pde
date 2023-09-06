@@ -4,14 +4,14 @@ import org.firmata.*;
 import cc.arduino.*;
 Arduino arduino; 
 
-void setup(){
-  //some of your code here
+
+void setup() {
   size (500,750);
   arduino = new Arduino(this, Arduino.list()[0], 57600);
 }
-void draw(){
-  //more of your code here
-fill (255,255,255);
+void draw() {
+  int rButton = arduino.analogRead(1);
+  fill (255,255,255);
 //legs
   ellipse(210,490,50,100);
   ellipse(190,520,75,50);
@@ -64,8 +64,8 @@ fill (255,255,255);
   ellipse(275,375,10,10);
   ellipse(500-145,345,10,10);
 //mouth
-  fill(0);
-  stroke(2,2,2,1); 
-  arc(250,300,25,25,0,PI);
+    fill(0);
+    stroke(2,2,2,1); 
+    arc(250,300,25,25,0,PI);
 }
 
