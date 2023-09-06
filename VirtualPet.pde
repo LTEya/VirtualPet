@@ -11,8 +11,6 @@ void setup(){
 }
 void draw(){
   //more of your code here
-  int rButton = 0;
-rButton = arduino.analogRead(1);
 fill (255,255,255);
 //legs
   ellipse(210,490,50,100);
