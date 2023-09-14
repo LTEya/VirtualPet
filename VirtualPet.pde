@@ -1,8 +1,6 @@
 import processing.serial.*;
 import cc.arduino.*;
-import org.firmata.*;
-import cc.arduino.*;
-Arduino arduino; 
+Arduino arduino;
 
 
 void setup() {
@@ -11,6 +9,7 @@ void setup() {
 }
 void draw() {
   int rButton = arduino.analogRead(1);
+  int lSensor = arduino.analogRead(5);
   fill (255,255,255);
 //legs
   ellipse(210,490,50,100);
@@ -65,14 +64,20 @@ void draw() {
   ellipse(500-145,345,10,10);
 //mouth
     fill(0);
-    stroke(2,2,2,1); 
+    stroke(2,2,2,1);
     arc(250,300,25,25,0,PI);
-//Light Sensor
-  if (rButton < 30){
-      fill(255,195,203);
-      strokeWeight(10);
-      ellipse(200,300,25,10);
-      ellipse(500-200,300,25,10);
-    }
+//right button
+  if (rButton > 30){
+  fill (255);
+  triangle (215,270,185,250,225,250);
+  triangle (500-215,270,500-185,250,500-225,250);
+  }
+//Light sensor
+    if (lSensor < 30){
+    fill(255,195,203);
+    strokeWeight(10);
+    ellipse(200,300,25,10);
+    ellipse(500-200,300,25,10);
+  }
+  System.out.print(lSensor);
 }
-
